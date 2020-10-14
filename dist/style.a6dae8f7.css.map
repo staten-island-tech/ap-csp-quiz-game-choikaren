@@ -1,0 +1,1 @@
+{"version":3,"sources":["scss\\style.scss"],"names":[],"mappings":"AAAA;AAAA;EAEE;EACA;EACA;EACA","file":"style.a6dae8f7.css","sourceRoot":"..\\src","sourcesContent":["html,\r\nbody {\r\n  box-sizing: border-box;\r\n  padding: 0 !important;\r\n  margin: 0 !important;\r\n  font-size: 62.5%;\r\n}\r\n"]}
