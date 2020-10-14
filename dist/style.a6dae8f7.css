@@ -50,7 +50,8 @@ body {
   font-weight: bold;
 }
 
-input, label {
+input,
+label {
   margin: 0.2rem;
   vertical-align: middle;
 }
@@ -61,17 +62,42 @@ input, label {
 }
 #submit div {
   margin: auto;
-  background-color: antiquewhite;
+  background-color: #ffd6cc;
   width: 30rem;
   text-align: center;
   padding: 1rem;
 }
+#submit div:hover {
+  cursor: pointer;
+}
+
+.results {
+  background-color: rgba(0, 0, 0, 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
 
 #results {
-  max-width: 100rem;
   font-size: 4rem;
-  margin: auto;
+  margin: 4rem;
+  margin-top: 10rem;
   text-align: center;
+  background-color: antiquewhite;
+  padding: 3rem;
+  font-weight: bold;
+}
+
+@media (min-width: 700px) {
+  #results {
+    margin: 10rem;
+  }
+}
+.close:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=/style.a6dae8f7.css.map */

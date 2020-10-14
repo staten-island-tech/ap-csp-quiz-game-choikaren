@@ -1,4 +1,4 @@
-import { quizQuestions } from "./questions";
+import { quizQuestions } from "./questions&answers";
 import { DOMSelectors } from "./DOM";
 console.log("connected");
 
@@ -6,7 +6,7 @@ const init = function () {
 
   quizQuestions.forEach((item) =>
 
-    DOMSelectors.quizContainer.insertAdjacentHTML("afterbegin",
+    DOMSelectors.quizContainer.insertAdjacentHTML("beforeend",
       `<div class="question" id="${item.number}" >
               <div class="questionAsked" >${item.question}</div>
               <br>
@@ -48,14 +48,52 @@ const init = function () {
       }
     }
     );
-    DOMSelectors.resultsContainer.innerHTML = "";
-    DOMSelectors.resultsContainer.insertAdjacentHTML("afterbegin", `<h1>Your Score is ${quizScore}/${quizQuestions.length}</h1>` ) ;
+
+    function noobLevel() {
+      let noobAlertMessage;
+
+      DOMSelectors.resultsContainer.style.display = "block";
+
+      if (`${quizScore}` >= '4') {
+        noobAlertMessage = 'MASSIVE NOOB ALERT!! BEWARE!!'
+      }
+      else if (`${quizScore}` >= '3') {
+        noobAlertMessage = 'MAJOR NOOB ALERT'
+      }
+      else if (`${quizScore}` >= '2') {
+        noobAlertMessage = 'MINOR NOOB ALERT'
+      }
+      else if (`${quizScore}` >= '1') {
+        noobAlertMessage = 'AMATEURE NOOB'
+      }
+      else {
+        noobAlertMessage = 'NO NOOBYNESS HERE'
+      }
+      DOMSelectors.results.innerHTML = "";
+ 
+      DOMSelectors.results.insertAdjacentHTML("beforeend",
+        `<div class="noobAlert" >
+      <div>Your Score is ${quizScore}/${quizQuestions.length}</div>
+      <div> ${noobAlertMessage} </div>
+      </div> 
+      `);
+    };
+    noobLevel();
   }
 
 
-  DOMSelectors.submitButton.addEventListener("click", submitQuiz );
+  DOMSelectors.submitButton.addEventListener("click", submitQuiz);
+
+  function closeResults() {
+    DOMSelectors.resultsContainer.style.display = "none";
+
+  }
+
+  DOMSelectors.closeResults.addEventListener("click", closeResults);
 
 
 };
+
+
 
 init(); 

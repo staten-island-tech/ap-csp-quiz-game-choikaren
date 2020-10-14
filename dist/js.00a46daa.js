@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"js/questions.js":[function(require,module,exports) {
+})({"js/questions&answers.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -171,28 +171,30 @@ Object.defineProperty(exports, "__esModule", {
 exports.DOMSelectors = void 0;
 var DOMSelectors = {
   quizContainer: document.querySelector("#quiz"),
-  resultsContainer: document.querySelector("#results"),
-  submitButton: document.querySelector("#submit")
+  resultsContainer: document.querySelector(".results"),
+  results: document.querySelector(".message"),
+  submitButton: document.querySelector("#submit"),
+  closeResults: document.querySelector(".close")
 };
 exports.DOMSelectors = DOMSelectors;
 },{}],"js/index.js":[function(require,module,exports) {
 "use strict";
 
-var _questions = require("./questions");
+var _questionsAnswers = require("./questions&answers");
 
 var _DOM = require("./DOM");
 
 console.log("connected");
 
 var init = function init() {
-  _questions.quizQuestions.forEach(function (item) {
-    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("afterbegin", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n              \n              </div>\n            </div>"));
+  _questionsAnswers.quizQuestions.forEach(function (item) {
+    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n              \n              </div>\n            </div>"));
   });
 
   var submitQuiz = function submitQuiz() {
     var quizScore = 0;
 
-    _questions.quizQuestions.forEach(function (question) {
+    _questionsAnswers.quizQuestions.forEach(function (question) {
       var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
 
       if (answerSelected === "".concat(question.correctAnswer)) {
@@ -203,16 +205,42 @@ var init = function init() {
       }
     });
 
-    _DOM.DOMSelectors.resultsContainer.innerHTML = "";
+    function noobLevel() {
+      var noobAlertMessage;
+      _DOM.DOMSelectors.resultsContainer.style.display = "block";
 
-    _DOM.DOMSelectors.resultsContainer.insertAdjacentHTML("afterbegin", "<h1>Your Score is ".concat(quizScore, "/").concat(_questions.quizQuestions.length, "</h1>"));
+      if ("".concat(quizScore) >= '4') {
+        noobAlertMessage = 'MASSIVE NOOB ALERT!! BEWARE!!';
+      } else if ("".concat(quizScore) >= '3') {
+        noobAlertMessage = 'MAJOR NOOB ALERT';
+      } else if ("".concat(quizScore) >= '2') {
+        noobAlertMessage = 'MINOR NOOB ALERT';
+      } else if ("".concat(quizScore) >= '1') {
+        noobAlertMessage = 'AMATEURE NOOB';
+      } else {
+        noobAlertMessage = 'NO NOOBYNESS HERE';
+      }
+
+      _DOM.DOMSelectors.results.innerHTML = "";
+
+      _DOM.DOMSelectors.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n      <div>Your Score is ".concat(quizScore, "/").concat(_questionsAnswers.quizQuestions.length, "</div>\n      <div> ").concat(noobAlertMessage, " </div>\n      </div> \n      "));
+    }
+
+    ;
+    noobLevel();
   };
 
   _DOM.DOMSelectors.submitButton.addEventListener("click", submitQuiz);
+
+  function closeResults() {
+    _DOM.DOMSelectors.resultsContainer.style.display = "none";
+  }
+
+  _DOM.DOMSelectors.closeResults.addEventListener("click", closeResults);
 };
 
 init();
-},{"./questions":"js/questions.js","./DOM":"js/DOM.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"./questions&answers":"js/questions&answers.js","./DOM":"js/DOM.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -240,7 +268,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61909" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49244" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
