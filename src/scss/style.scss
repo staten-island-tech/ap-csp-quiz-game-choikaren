@@ -19,16 +19,22 @@ body {
 .title {
   text-align: center;
   text-transform: uppercase;
-
+  h1 {
+    font-size: 3rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
   img {
-    width: 10rem;
+    width: 30rem;
   }
 }
 
 #quiz {
-  max-width: 40rem;
+  max-width: 100rem;
   margin: auto;
   display: grid;
+  font-size: 1.75rem;
   // grid-gap: 1rem;
 }
 
@@ -50,4 +56,23 @@ input, label {
   // height: 1rem;
   margin: .2rem;
   vertical-align: middle;
+}
+
+#submit {
+  font-size: 3rem;
+  display: block;
+  div {
+    margin: auto;
+    background-color: antiquewhite;
+    width: 30rem;
+    text-align: center;
+    padding: 1rem;
+  }
+}
+
+#results {
+  max-width: 100rem;
+  font-size: 4rem;
+  margin: auto;
+  text-align: center;
 }
