@@ -6,4 +6,46 @@ body {
   font-size: 62.5%;
 }
 
+::selection {
+  background-color: #ffd6cc;
+}
+
+.body {
+  padding: 2rem !important;
+  background-color: #a2a2df;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+}
+.title img {
+  width: 10rem;
+}
+
+#quiz {
+  max-width: 40rem;
+  margin: auto;
+  display: grid;
+}
+
+@media (min-width: 400px) {
+  #quiz {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.question {
+  padding: 1.5rem;
+}
+
+.questionAsked {
+  font-weight: bold;
+}
+
+input, label {
+  margin: 0.2rem;
+  vertical-align: middle;
+}
+
 /*# sourceMappingURL=/style.a6dae8f7.css.map */

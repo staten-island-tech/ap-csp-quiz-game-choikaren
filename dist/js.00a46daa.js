@@ -132,7 +132,7 @@ var quizQuestions = [{
     b: "Crocs",
     c: "Socks and Sandals"
   },
-  correctAnswer: "b"
+  correctAnswer: "Crocs"
 }, {
   number: 2,
   question: "How do you fly?",
@@ -141,17 +141,25 @@ var quizQuestions = [{
     b: "Airplane",
     c: "Helicopter"
   },
-  correctAnswer: "a"
+  correctAnswer: "Extremely built up flatulence"
 }, {
   number: 3,
-  question: "Which tool can you use to ensure code quality?",
+  question: "Do you like free stuff?",
   answers: {
-    a: "Angular",
-    b: "jQuery",
-    c: "RequireJS",
-    d: "ESLint"
+    a: "No",
+    b: "No",
+    c: "Yes"
   },
-  correctAnswer: "d"
+  correctAnswer: "Yes"
+}, {
+  number: 4,
+  question: "What is the best way to cut your bagels?",
+  answers: {
+    a: "Halves",
+    b: "Thirds",
+    c: "Quarters"
+  },
+  correctAnswer: "Quarters"
 }];
 exports.quizQuestions = quizQuestions;
 },{}],"js/DOM.js":[function(require,module,exports) {
@@ -162,9 +170,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.DOMSelectors = void 0;
 var DOMSelectors = {
-  quizContainer: document.querySelector(".quiz"),
-  resultsContainer: document.querySelector(".results"),
-  submitButton: document.querySelector(".submit")
+  quizContainer: document.querySelector("#quiz"),
+  resultsContainer: document.querySelector("#results"),
+  submitButton: document.querySelector("#submit")
 };
 exports.DOMSelectors = DOMSelectors;
 },{}],"js/index.js":[function(require,module,exports) {
@@ -178,8 +186,29 @@ console.log("connected");
 
 var init = function init() {
   _questions.quizQuestions.forEach(function (item) {
-    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("afterbegin", "<div class=\"question\">\n              <div class=\"questionAsked\">".concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n\n              <input type=\"radio\" id=\"").concat(item.answers.a, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n              <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label><br>\n\n              <input type=\"radio\" id=\"").concat(item.answers.b, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n              <label for=\"").concat(item.answers.b, "\">").concat(item.answers.b, "</label><br>\n\n              <input type=\"radio\" id=\"").concat(item.answers.c, "\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n              <label for=\"").concat(item.answers.c, "\">").concat(item.answers.c, "</label>\n              </div>\n              <br>\n            </div>"));
+    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("afterbegin", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n              \n              </div>\n            </div>"));
   });
+
+  var submitQuiz = function submitQuiz() {
+    var quizScore = 0;
+
+    _questions.quizQuestions.forEach(function (question) {
+      var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
+
+      if (answerSelected === "".concat(question.correctAnswer)) {
+        quizScore++;
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(10,200,110)";
+      } else {
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(200,100,110)";
+      }
+    });
+
+    _DOM.DOMSelectors.resultsContainer.innerHTML = "";
+
+    _DOM.DOMSelectors.resultsContainer.insertAdjacentHTML("afterbegin", "<h1>Your Score is ".concat(quizScore, "/").concat(_questions.quizQuestions.length, "</h1>"));
+  };
+
+  _DOM.DOMSelectors.submitButton.addEventListener("click", submitQuiz);
 };
 
 init();
@@ -211,7 +240,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50556" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61909" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

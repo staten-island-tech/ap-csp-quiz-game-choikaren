@@ -7,7 +7,7 @@ const quizQuestions = [
             b: "Crocs",
             c: "Socks and Sandals"
         },
-        correctAnswer: "b"
+        correctAnswer: "Crocs"
     },
     {
         number: 2,
@@ -17,19 +17,29 @@ const quizQuestions = [
             b: "Airplane",
             c: "Helicopter"
         },
-        correctAnswer: "a"
+        correctAnswer: "Extremely built up flatulence"
     },
     {
         number: 3,
-        question: "Which tool can you use to ensure code quality?",
+        question: "Do you like free stuff?",
         answers: {
-            a: "Angular",
-            b: "jQuery",
-            c: "RequireJS",
-            d: "ESLint"
+            a: "No",
+            b: "No",
+            c: "Yes"
         },
-        correctAnswer: "d"
+        correctAnswer: "Yes"
+    },    
+    {
+        number: 4,
+        question: "What is the best way to cut your bagels?",
+        answers: {
+            a: "Halves",
+            b: "Thirds",
+            c: "Quarters"
+        },
+        correctAnswer: "Quarters"
     }
+
 ];
 
 export { quizQuestions };
