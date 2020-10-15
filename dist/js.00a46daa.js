@@ -123,7 +123,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.quizQuestions = void 0;
+exports.noobAlertGIFS = exports.quizQuestions = void 0;
 var quizQuestions = [{
   number: 1,
   question: "What is the best shoe?",
@@ -160,8 +160,46 @@ var quizQuestions = [{
     c: "Quarters"
   },
   correctAnswer: "Quarters"
+}, {
+  number: 5,
+  question: "When eating a bowl of cereal, what do you pour first?",
+  answers: {
+    a: "Milk",
+    b: "Cereal",
+    c: "Both because I'm an expert multitasker"
+  },
+  correctAnswer: "Milk"
+}, {
+  number: 6,
+  question: "What is the best breakfast?",
+  answers: {
+    a: "Green Eggs & Ham",
+    b: "Red Eggs & Ham",
+    c: "Oatmeal"
+  },
+  correctAnswer: "Oatmeal"
+}, {
+  number: 7,
+  question: "Do you know how to use chopsticks?",
+  answers: {
+    a: "Yes, um duhh",
+    b: "No",
+    c: "Only know how to use one singular chopstick"
+  },
+  correctAnswer: "No"
+}, {
+  number: 8,
+  question: "Look down. You've got something on your shirt - ",
+  answers: {
+    a: "WOOP!",
+    b: "DUN GOOFED!",
+    c: "AHAHAHAH!"
+  },
+  correctAnswer: "WOOP!"
 }];
 exports.quizQuestions = quizQuestions;
+var noobAlertGIFS = ["https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif"];
+exports.noobAlertGIFS = noobAlertGIFS;
 },{}],"js/DOM.js":[function(require,module,exports) {
 "use strict";
 
@@ -188,7 +226,7 @@ console.log("connected");
 
 var init = function init() {
   _questionsAnswers.quizQuestions.forEach(function (item) {
-    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" id=\"").concat(item.answers, "\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n              \n              </div>\n            </div>"));
+    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n              \n              </div>\n            </div>"));
   });
 
   var submitQuiz = function submitQuiz() {
@@ -197,23 +235,25 @@ var init = function init() {
     _questionsAnswers.quizQuestions.forEach(function (question) {
       var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
 
-      if (answerSelected === "".concat(question.correctAnswer)) {
+      if (answerSelected !== "".concat(question.correctAnswer)) {
         quizScore++;
-        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(10,200,110)";
-      } else {
         document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(200,100,110)";
+      } else {
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(10,200,110)";
       }
     });
 
     function noobLevel() {
       var noobAlertMessage;
+      var noobAlertMedia;
       _DOM.DOMSelectors.resultsContainer.style.display = "block";
 
-      if ("".concat(quizScore) >= '4') {
-        noobAlertMessage = 'MASSIVE NOOB ALERT!! BEWARE!!';
-      } else if ("".concat(quizScore) >= '3') {
+      if ("".concat(quizScore) >= '7') {
+        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
+      } else if ("".concat(quizScore) >= '5') {
         noobAlertMessage = 'MAJOR NOOB ALERT';
-      } else if ("".concat(quizScore) >= '2') {
+      } else if ("".concat(quizScore) >= '3') {
         noobAlertMessage = 'MINOR NOOB ALERT';
       } else if ("".concat(quizScore) >= '1') {
         noobAlertMessage = 'AMATEURE NOOB';
@@ -223,7 +263,7 @@ var init = function init() {
 
       _DOM.DOMSelectors.results.innerHTML = "";
 
-      _DOM.DOMSelectors.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n      <div>Your Score is ".concat(quizScore, "/").concat(_questionsAnswers.quizQuestions.length, "</div>\n      <div> ").concat(noobAlertMessage, " </div>\n      </div> \n      "));
+      _DOM.DOMSelectors.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n      <div>Your Score is ".concat(quizScore, "/").concat(_questionsAnswers.quizQuestions.length, "</div>\n      <div> ").concat(noobAlertMessage, " </div>\n      <img  class=\"noobAlertMedia\" src=\"").concat(noobAlertMedia, "\" >\n      </div> \n      "));
     }
 
     ;
@@ -268,7 +308,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49244" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51002" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

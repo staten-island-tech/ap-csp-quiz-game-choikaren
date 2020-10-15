@@ -4,6 +4,12 @@ body {
   padding: 0 !important;
   margin: 0 !important;
   font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }
 
 ::selection {
@@ -21,13 +27,13 @@ body {
   text-transform: uppercase;
 }
 .title h1 {
-  font-size: 3rem;
+  font-size: 5rem;
 }
 .title h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
 }
 .title img {
-  width: 30rem;
+  width: 40rem;
 }
 
 #quiz {
@@ -35,9 +41,10 @@ body {
   margin: auto;
   display: grid;
   font-size: 1.75rem;
+  padding: 2rem;
 }
 
-@media (min-width: 400px) {
+@media (min-width: 700px) {
   #quiz {
     grid-template-columns: 1fr 1fr;
   }
@@ -56,19 +63,24 @@ label {
   vertical-align: middle;
 }
 
-#submit {
+.btn {
   font-size: 3rem;
   display: block;
+  padding-bottom: 1rem;
 }
-#submit div {
+.btn div {
   margin: auto;
   background-color: #ffd6cc;
   width: 30rem;
   text-align: center;
   padding: 1rem;
 }
-#submit div:hover {
+.btn div:hover {
   cursor: pointer;
+}
+
+.btn.reset div {
+  background-color: #8989d8;
 }
 
 .results {
@@ -98,6 +110,11 @@ label {
 }
 .close:hover {
   cursor: pointer;
+}
+
+.noobAlertMedia {
+  width: 100%;
+  max-width: 40rem;
 }
 
 /*# sourceMappingURL=/style.a6dae8f7.css.map */

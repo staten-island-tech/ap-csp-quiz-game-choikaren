@@ -1,4 +1,4 @@
-import { quizQuestions } from "./questions&answers";
+import { noobAlertGIFS, quizQuestions } from "./questions&answers";
 import { DOMSelectors } from "./DOM";
 console.log("connected");
 
@@ -12,17 +12,17 @@ const init = function () {
               <br>
               <div class="choicesContainer" >
                 <div class="row" >              
-                    <input type="radio" id="${item.answers}" name="${item.number}" value="${item.answers.a}">
+                    <input type="radio" name="${item.number}" value="${item.answers.a}">
                     <label for="${item.answers.a}">${item.answers.a}</label>
                 </div>
 
                 <div class="row" >              
-                <input type="radio" id="${item.answers}" name="${item.number}" value="${item.answers.b}">
+                <input type="radio" name="${item.number}" value="${item.answers.b}">
                 <label for="${item.answers}">${item.answers.b}</label>
                 </div>
 
                 <div class="row" >              
-                <input type="radio" id="${item.answers}" name="${item.number}"  value="${item.answers.c}">
+                <input type="radio" name="${item.number}"  value="${item.answers.c}">
                 <label for="${item.answers}">${item.answers.c}</label>
                 </div>
 
@@ -39,28 +39,30 @@ const init = function () {
       const answerSelected = document.querySelector(
         `input[name="${question.number}"]:checked`
       ).value;
-      if (answerSelected === `${question.correctAnswer}`) {
+      if (answerSelected !== `${question.correctAnswer}`) {
         quizScore++;
-        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(10,200,110)";
+        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(200,100,110)";
       }
       else {
-        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(200,100,110)";
+        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(10,200,110)";
       }
     }
     );
 
     function noobLevel() {
       let noobAlertMessage;
+      let noobAlertMedia;
 
       DOMSelectors.resultsContainer.style.display = "block";
 
-      if (`${quizScore}` >= '4') {
-        noobAlertMessage = 'MASSIVE NOOB ALERT!! BEWARE!!'
+      if (`${quizScore}` >= '7') {
+        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
+        noobAlertMedia = noobAlertGIFS[0];
       }
-      else if (`${quizScore}` >= '3') {
+      else if (`${quizScore}` >= '5') {
         noobAlertMessage = 'MAJOR NOOB ALERT'
       }
-      else if (`${quizScore}` >= '2') {
+      else if (`${quizScore}` >= '3') {
         noobAlertMessage = 'MINOR NOOB ALERT'
       }
       else if (`${quizScore}` >= '1') {
@@ -75,6 +77,7 @@ const init = function () {
         `<div class="noobAlert" >
       <div>Your Score is ${quizScore}/${quizQuestions.length}</div>
       <div> ${noobAlertMessage} </div>
+      <img  class="noobAlertMedia" src="${noobAlertMedia}" >
       </div> 
       `);
     };
