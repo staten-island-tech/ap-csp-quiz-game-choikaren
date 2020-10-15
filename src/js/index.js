@@ -61,15 +61,23 @@ const init = function () {
       }
       else if (`${quizScore}` >= '5') {
         noobAlertMessage = 'MAJOR NOOB ALERT'
+        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
+        noobAlertMedia = noobAlertGIFS[0];
       }
       else if (`${quizScore}` >= '3') {
         noobAlertMessage = 'MINOR NOOB ALERT'
+        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
+        noobAlertMedia = noobAlertGIFS[0];
       }
       else if (`${quizScore}` >= '1') {
-        noobAlertMessage = 'AMATEURE NOOB'
+        noobAlertMessage = 'AMATEUR NOOB'
+        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
+        noobAlertMedia = noobAlertGIFS[1];
       }
       else {
         noobAlertMessage = 'NO NOOBYNESS HERE'
+        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
+        noobAlertMedia = noobAlertGIFS[0];
       }
       DOMSelectors.results.innerHTML = "";
  

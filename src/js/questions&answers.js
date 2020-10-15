@@ -84,6 +84,7 @@ const quizQuestions = [
 
 const noobAlertGIFS = [
     "https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif",
+    "https://i.postimg.cc/2SZYFGNR/amateur-Noob.gif",
 ]
 
 export { quizQuestions, noobAlertGIFS };

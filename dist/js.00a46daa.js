@@ -198,7 +198,7 @@ var quizQuestions = [{
   correctAnswer: "WOOP!"
 }];
 exports.quizQuestions = quizQuestions;
-var noobAlertGIFS = ["https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif"];
+var noobAlertGIFS = ["https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif", "https://i.postimg.cc/2SZYFGNR/amateur-Noob.gif"];
 exports.noobAlertGIFS = noobAlertGIFS;
 },{}],"js/DOM.js":[function(require,module,exports) {
 "use strict";
@@ -253,12 +253,20 @@ var init = function init() {
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
       } else if ("".concat(quizScore) >= '5') {
         noobAlertMessage = 'MAJOR NOOB ALERT';
+        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
       } else if ("".concat(quizScore) >= '3') {
         noobAlertMessage = 'MINOR NOOB ALERT';
+        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
       } else if ("".concat(quizScore) >= '1') {
-        noobAlertMessage = 'AMATEURE NOOB';
+        noobAlertMessage = 'AMATEUR NOOB';
+        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
       } else {
         noobAlertMessage = 'NO NOOBYNESS HERE';
+        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
       }
 
       _DOM.DOMSelectors.results.innerHTML = "";
@@ -308,7 +316,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51002" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51934" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
