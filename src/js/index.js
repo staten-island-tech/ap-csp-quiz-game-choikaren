@@ -39,12 +39,12 @@ const init = function () {
       const answerSelected = document.querySelector(
         `input[name="${question.number}"]:checked`
       ).value;
-      if (answerSelected !== `${question.correctAnswer}`) {
+      if (answerSelected === `${question.correctAnswer}`) {
         quizScore++;
-        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(200,100,110)";
+        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(10,200,110)";
       }
       else {
-        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(10,200,110)";
+        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(200,100,110)";
       }
     }
     );
@@ -56,23 +56,23 @@ const init = function () {
       DOMSelectors.resultsContainer.style.display = "block";
 
       if (`${quizScore}` >= '7') {
-        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
-        noobAlertMedia = noobAlertGIFS[0];
+        noobAlertMessage = 'NO NOOBYNESS HERE';
+        noobAlertMedia = noobAlertGIFS[1];
       }
       else if (`${quizScore}` >= '5') {
-        noobAlertMessage = 'MAJOR NOOB ALERT'
-        noobAlertMedia = noobAlertGIFS[0];
+        noobAlertMessage = 'AMATEUR NOOB';
+        noobAlertMedia = noobAlertGIFS[1];
       }
       else if (`${quizScore}` >= '3') {
-        noobAlertMessage = 'MINOR NOOB ALERT'
-        noobAlertMedia = noobAlertGIFS[0];
+        noobAlertMessage = 'MINOR NOOB ALERT';
+        noobAlertMedia = noobAlertGIFS[1];
       }
       else if (`${quizScore}` >= '1') {
-        noobAlertMessage = 'AMATEUR NOOB'
+        noobAlertMessage = 'MAJOR NOOB ALERT';
         noobAlertMedia = noobAlertGIFS[1];
       }
       else {
-        noobAlertMessage = 'NO NOOBYNESS HERE'
+        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
         noobAlertMedia = noobAlertGIFS[0];
       }
       DOMSelectors.results.innerHTML = "";

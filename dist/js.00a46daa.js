@@ -235,11 +235,11 @@ var init = function init() {
     _questionsAnswers.quizQuestions.forEach(function (question) {
       var answerSelected = document.querySelector("input[name=\"".concat(question.number, "\"]:checked")).value;
 
-      if (answerSelected !== "".concat(question.correctAnswer)) {
+      if (answerSelected === "".concat(question.correctAnswer)) {
         quizScore++;
-        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(200,100,110)";
-      } else {
         document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(10,200,110)";
+      } else {
+        document.getElementById("".concat(question.number)).style.backgroundColor = "rgb(200,100,110)";
       }
     });
 
@@ -249,19 +249,19 @@ var init = function init() {
       _DOM.DOMSelectors.resultsContainer.style.display = "block";
 
       if ("".concat(quizScore) >= '7') {
-        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
-        noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
+        noobAlertMessage = 'NO NOOBYNESS HERE';
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
       } else if ("".concat(quizScore) >= '5') {
-        noobAlertMessage = 'MAJOR NOOB ALERT';
-        noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
-      } else if ("".concat(quizScore) >= '3') {
-        noobAlertMessage = 'MINOR NOOB ALERT';
-        noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
-      } else if ("".concat(quizScore) >= '1') {
         noobAlertMessage = 'AMATEUR NOOB';
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
+      } else if ("".concat(quizScore) >= '3') {
+        noobAlertMessage = 'MINOR NOOB ALERT';
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
+      } else if ("".concat(quizScore) >= '1') {
+        noobAlertMessage = 'MAJOR NOOB ALERT';
+        noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
       } else {
-        noobAlertMessage = 'NO NOOBYNESS HERE';
+        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
       }
 
