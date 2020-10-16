@@ -71,6 +71,16 @@ const quizQuestions = [
     },
     {
         number: 8,
+        question: "Do you eat or drink soup?",
+        answers: {
+            a: "Slurrrppp",
+            b: "Drink",
+            c: "Eat"
+        },
+        correctAnswer: "Drink"
+    },
+    {
+        number: 9,
         question: "Look down. You've got something on your shirt - ",
         answers: {
             a: "WOOP!",

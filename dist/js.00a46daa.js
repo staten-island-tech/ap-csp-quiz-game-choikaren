@@ -189,6 +189,15 @@ var quizQuestions = [{
   correctAnswer: "No"
 }, {
   number: 8,
+  question: "Do you eat or drink soup?",
+  answers: {
+    a: "Slurrrppp",
+    b: "Drink",
+    c: "Eat"
+  },
+  correctAnswer: "Drink"
+}, {
+  number: 9,
   question: "Look down. You've got something on your shirt - ",
   answers: {
     a: "WOOP!",
@@ -312,7 +321,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51934" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59352" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
