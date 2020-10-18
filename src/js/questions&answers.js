@@ -71,7 +71,7 @@ const quizQuestions = [
     answers: {
       a: "Yes, um duhh",
       b: "No",
-      c: "Only know how to use one singular chopstick",
+      c: "Only one singular chopstick",
       d: "That's racist",
     },
     correctAnswer: "No",
@@ -113,7 +113,6 @@ const quizQuestions = [
 
 const noobAlertGIFS = [
   "https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif",
-  "",
   "https://i.postimg.cc/s2mG1Sgd/banananoob.gif",
 ];
 

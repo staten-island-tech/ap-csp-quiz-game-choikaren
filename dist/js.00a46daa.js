@@ -130,7 +130,8 @@ var quizQuestions = [{
   answers: {
     a: "Vans",
     b: "Crocs",
-    c: "Socks and Sandals"
+    c: "Socks & Sandals",
+    d: "My bare toes"
   },
   correctAnswer: "Crocs"
 }, {
@@ -139,7 +140,8 @@ var quizQuestions = [{
   answers: {
     a: "Extremely built up flatulence",
     b: "Airplane",
-    c: "Helicopter"
+    c: "My inner chicken",
+    d: "Helicopter"
   },
   correctAnswer: "Extremely built up flatulence"
 }, {
@@ -147,17 +149,19 @@ var quizQuestions = [{
   question: "Do you like free stuff?",
   answers: {
     a: "No",
-    b: "No",
-    c: "Yes"
+    b: "Only if it's on sale",
+    c: "Yes",
+    d: "YES"
   },
-  correctAnswer: "Yes"
+  correctAnswer: "YES"
 }, {
   number: 4,
   question: "What is the best way to cut your bagels?",
   answers: {
     a: "Halves",
     b: "Thirds",
-    c: "Quarters"
+    c: "Quarters",
+    d: "I chomp it whole"
   },
   correctAnswer: "Quarters"
 }, {
@@ -166,7 +170,8 @@ var quizQuestions = [{
   answers: {
     a: "Milk",
     b: "Cereal",
-    c: "Both because I'm an expert multitasker"
+    c: "Both because I'm an expert multitasker",
+    d: "Spoon"
   },
   correctAnswer: "Milk"
 }, {
@@ -174,8 +179,9 @@ var quizQuestions = [{
   question: "What is the best breakfast?",
   answers: {
     a: "Green Eggs & Ham",
-    b: "Red Eggs & Ham",
-    c: "Oatmeal"
+    b: "Red Eggs & Spam",
+    c: "Oatmeal",
+    d: "Untoasted toast, Choi style"
   },
   correctAnswer: "Oatmeal"
 }, {
@@ -184,7 +190,8 @@ var quizQuestions = [{
   answers: {
     a: "Yes, um duhh",
     b: "No",
-    c: "Only know how to use one singular chopstick"
+    c: "Only one singular chopstick",
+    d: "That's racist"
   },
   correctAnswer: "No"
 }, {
@@ -193,21 +200,33 @@ var quizQuestions = [{
   answers: {
     a: "Slurrrppp",
     b: "Drink",
-    c: "Eat"
+    c: "Eat",
+    d: "Nonstop chug"
   },
-  correctAnswer: "Drink"
+  correctAnswer: "Slurrrppp"
 }, {
   number: 9,
-  question: "Look down. You've got something on your shirt - ",
+  question: "Hey, you've got something on your shirt - ",
   answers: {
     a: "WOOP!",
-    b: "DUN GOOFED!",
-    c: "AHAHAHAH!"
+    b: "DONE GOOFED!",
+    c: "BAHAHAHA!",
+    d: "That's embarassing"
   },
   correctAnswer: "WOOP!"
+}, {
+  number: 10,
+  question: "Can you ride a bike?",
+  answers: {
+    a: "I am Karen Choi",
+    b: "hard pass",
+    c: "Yes",
+    d: "Duh"
+  },
+  correctAnswer: "Yes"
 }];
 exports.quizQuestions = quizQuestions;
-var noobAlertGIFS = ["https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif", "https://i.postimg.cc/2SZYFGNR/amateur-Noob.gif"];
+var noobAlertGIFS = ["https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif", "https://i.postimg.cc/s2mG1Sgd/banananoob.gif"];
 exports.noobAlertGIFS = noobAlertGIFS;
 },{}],"js/DOM.js":[function(require,module,exports) {
 "use strict";
@@ -235,7 +254,7 @@ console.log("connected");
 
 var init = function init() {
   _questionsAnswers.quizQuestions.forEach(function (item) {
-    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n              \n              </div>\n            </div>"));
+    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.d, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.d, "</label>\n                </div>\n              \n              </div>\n            </div>"));
   });
 
   var submitQuiz = function submitQuiz() {
@@ -257,17 +276,17 @@ var init = function init() {
       var noobAlertMedia;
       _DOM.DOMSelectors.resultsContainer.style.display = "block";
 
-      if ("".concat(quizScore) >= '7') {
-        noobAlertMessage = 'NO NOOBYNESS HERE';
+      if ("".concat(quizScore) >= "8") {
+        noobAlertMessage = "NO NOOBYNESS HERE";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
-      } else if ("".concat(quizScore) >= '5') {
-        noobAlertMessage = 'AMATEUR NOOB';
+      } else if ("".concat(quizScore) >= "6") {
+        noobAlertMessage = "AMATEUR NOOB";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
-      } else if ("".concat(quizScore) >= '3') {
-        noobAlertMessage = 'MINOR NOOB ALERT';
+      } else if ("".concat(quizScore) >= "4") {
+        noobAlertMessage = "MINOR NOOB ALERT";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
-      } else if ("".concat(quizScore) >= '1') {
-        noobAlertMessage = 'MAJOR NOOB ALERT';
+      } else if ("".concat(quizScore) >= "2") {
+        noobAlertMessage = "MAJOR NOOB ALERT";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
       } else {
         noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
@@ -279,7 +298,6 @@ var init = function init() {
       _DOM.DOMSelectors.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n      <div>Your Score is ".concat(quizScore, "/").concat(_questionsAnswers.quizQuestions.length, "</div>\n      <div> ").concat(noobAlertMessage, " </div>\n      <img  class=\"noobAlertMedia\" src=\"").concat(noobAlertMedia, "\" >\n      </div> \n      "));
     }
 
-    ;
     noobLevel();
   };
 
@@ -321,7 +339,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59352" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "60395" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

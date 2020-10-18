@@ -25,6 +25,10 @@ const init = function () {
                 <label for="${item.answers}">${item.answers.c}</label>
                 </div>
 
+                <div class="row" >              
+                <input type="radio" name="${item.number}"  value="${item.answers.d}">
+                <label for="${item.answers}">${item.answers.d}</label>
+                </div>
               
               </div>
             </div>`
