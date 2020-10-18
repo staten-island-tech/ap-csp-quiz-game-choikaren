@@ -96,16 +96,16 @@ label {
 #results {
   font-size: 4rem;
   margin: 4rem;
-  margin-top: 10rem;
+  margin-top: 8rem;
   text-align: center;
   background-color: antiquewhite;
-  padding: 3rem;
+  padding: 1rem;
   font-weight: bold;
 }
 
 @media (min-width: 700px) {
   #results {
-    margin: 10rem;
+    margin: 5rem;
   }
 }
 .close:hover {

@@ -114,6 +114,9 @@ const quizQuestions = [
 const noobAlertGIFS = [
   "https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif",
   "https://i.postimg.cc/s2mG1Sgd/banananoob.gif",
+  "https://i.postimg.cc/wMP9wjMf/obama-Noob-gif.gif",
+  "https://i.postimg.cc/52yRxSPC/amateur-Noob.gif",
+  "https://i.postimg.cc/4xHQLLLB/cool-Beans.gif",
 ];
 
 export { quizQuestions, noobAlertGIFS };

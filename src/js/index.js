@@ -60,13 +60,13 @@ const init = function () {
 
       if (`${quizScore}` >= "8") {
         noobAlertMessage = "NO NOOBYNESS HERE";
-        noobAlertMedia = noobAlertGIFS[1];
+        noobAlertMedia = noobAlertGIFS[4];
       } else if (`${quizScore}` >= "6") {
         noobAlertMessage = "AMATEUR NOOB";
-        noobAlertMedia = noobAlertGIFS[1];
+        noobAlertMedia = noobAlertGIFS[3];
       } else if (`${quizScore}` >= "4") {
         noobAlertMessage = "MINOR NOOB ALERT";
-        noobAlertMedia = noobAlertGIFS[1];
+        noobAlertMedia = noobAlertGIFS[2];
       } else if (`${quizScore}` >= "2") {
         noobAlertMessage = "MAJOR NOOB ALERT";
         noobAlertMedia = noobAlertGIFS[1];
