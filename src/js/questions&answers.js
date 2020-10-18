@@ -1,100 +1,120 @@
 const quizQuestions = [
-    {
-        number: 1,
-        question: "What is the best shoe?",
-        answers: {
-            a: "Vans",
-            b: "Crocs",
-            c: "Socks and Sandals"
-        },
-        correctAnswer: "Crocs"
+  {
+    number: 1,
+    question: "What is the best shoe?",
+    answers: {
+      a: "Vans",
+      b: "Crocs",
+      c: "Socks & Sandals",
+      d: "My bare toes",
     },
-    {
-        number: 2,
-        question: "How do you fly?",
-        answers: {
-            a: "Extremely built up flatulence",
-            b: "Airplane",
-            c: "Helicopter"
-        },
-        correctAnswer: "Extremely built up flatulence"
+    correctAnswer: "Crocs",
+  },
+  {
+    number: 2,
+    question: "How do you fly?",
+    answers: {
+      a: "Extremely built up flatulence",
+      b: "Airplane",
+      c: "My inner chicken",
+      d: "Helicopter",
     },
-    {
-        number: 3,
-        question: "Do you like free stuff?",
-        answers: {
-            a: "No",
-            b: "No",
-            c: "Yes"
-        },
-        correctAnswer: "Yes"
-    },    
-    {
-        number: 4,
-        question: "What is the best way to cut your bagels?",
-        answers: {
-            a: "Halves",
-            b: "Thirds",
-            c: "Quarters"
-        },
-        correctAnswer: "Quarters"
+    correctAnswer: "Extremely built up flatulence",
+  },
+  {
+    number: 3,
+    question: "Do you like free stuff?",
+    answers: {
+      a: "No",
+      b: "Only if it's on sale",
+      c: "Yes",
+      d: "YES",
     },
-    {
-        number: 5,
-        question: "When eating a bowl of cereal, what do you pour first?",
-        answers: {
-            a: "Milk",
-            b: "Cereal",
-            c: "Both because I'm an expert multitasker"
-        },
-        correctAnswer: "Milk"
+    correctAnswer: "YES",
+  },
+  {
+    number: 4,
+    question: "What is the best way to cut your bagels?",
+    answers: {
+      a: "Halves",
+      b: "Thirds",
+      c: "Quarters",
+      d: "I chomp it whole",
     },
-    {
-        number: 6,
-        question: "What is the best breakfast?",
-        answers: {
-            a: "Green Eggs & Ham",
-            b: "Red Eggs & Ham",
-            c: "Oatmeal"
-        },
-        correctAnswer: "Oatmeal"
+    correctAnswer: "Quarters",
+  },
+  {
+    number: 5,
+    question: "When eating a bowl of cereal, what do you pour first?",
+    answers: {
+      a: "Milk",
+      b: "Cereal",
+      c: "Both because I'm an expert multitasker",
+      d: "Spoon",
     },
-    {
-        number: 7,
-        question: "Do you know how to use chopsticks?",
-        answers: {
-            a: "Yes, um duhh",
-            b: "No",
-            c: "Only know how to use one singular chopstick"
-        },
-        correctAnswer: "No"
+    correctAnswer: "Milk",
+  },
+  {
+    number: 6,
+    question: "What is the best breakfast?",
+    answers: {
+      a: "Green Eggs & Ham",
+      b: "Red Eggs & Spam",
+      c: "Oatmeal",
+      d: "Untoasted toast, Choi style",
     },
-    {
-        number: 8,
-        question: "Do you eat or drink soup?",
-        answers: {
-            a: "Slurrrppp",
-            b: "Drink",
-            c: "Eat"
-        },
-        correctAnswer: "Drink"
+    correctAnswer: "Oatmeal",
+  },
+  {
+    number: 7,
+    question: "Do you know how to use chopsticks?",
+    answers: {
+      a: "Yes, um duhh",
+      b: "No",
+      c: "Only know how to use one singular chopstick",
+      d: "That's racist",
     },
-    {
-        number: 9,
-        question: "Look down. You've got something on your shirt - ",
-        answers: {
-            a: "WOOP!",
-            b: "DUN GOOFED!",
-            c: "AHAHAHAH!"
-        },
-        correctAnswer: "WOOP!"
+    correctAnswer: "No",
+  },
+  {
+    number: 8,
+    question: "Do you eat or drink soup?",
+    answers: {
+      a: "Slurrrppp",
+      b: "Drink",
+      c: "Eat",
+      d: "Nonstop chug",
     },
-    
+    correctAnswer: "Slurrrppp",
+  },
+  {
+    number: 9,
+    question: "Hey, you've got something on your shirt - ",
+    answers: {
+      a: "WOOP!",
+      b: "DONE GOOFED!",
+      c: "BAHAHAHA!",
+      d: "That's embarassing",
+    },
+    correctAnswer: "WOOP!",
+  },
+  {
+    number: 10,
+    question: "Can you ride a bike?",
+    answers: {
+      a: "I am Karen Choi",
+      b: "hard pass",
+      c: "Yes",
+      d: "Duh",
+    },
+    correctAnswer: "Yes",
+  },
 ];
 
 const noobAlertGIFS = [
-    "https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif",
-    "https://i.postimg.cc/2SZYFGNR/amateur-Noob.gif",
-]
+  "https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif",
+  "",
+  "https://i.postimg.cc/s2mG1Sgd/banananoob.gif",
+];
 
 export { quizQuestions, noobAlertGIFS };

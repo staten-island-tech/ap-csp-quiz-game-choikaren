@@ -3,10 +3,9 @@ import { DOMSelectors } from "./DOM";
 console.log("connected");
 
 const init = function () {
-
   quizQuestions.forEach((item) =>
-
-    DOMSelectors.quizContainer.insertAdjacentHTML("beforeend",
+    DOMSelectors.quizContainer.insertAdjacentHTML(
+      "beforeend",
       `<div class="question" id="${item.number}" >
               <div class="questionAsked" >${item.question}</div>
               <br>
@@ -41,13 +40,13 @@ const init = function () {
       ).value;
       if (answerSelected === `${question.correctAnswer}`) {
         quizScore++;
-        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(10,200,110)";
+        document.getElementById(`${question.number}`).style.backgroundColor =
+          "rgb(10,200,110)";
+      } else {
+        document.getElementById(`${question.number}`).style.backgroundColor =
+          "rgb(200,100,110)";
       }
-      else {
-        document.getElementById(`${question.number}`).style.backgroundColor = "rgb(200,100,110)";
-      }
-    }
-    );
+    });
 
     function noobLevel() {
       let noobAlertMessage;
@@ -55,52 +54,44 @@ const init = function () {
 
       DOMSelectors.resultsContainer.style.display = "block";
 
-      if (`${quizScore}` >= '7') {
-        noobAlertMessage = 'NO NOOBYNESS HERE';
+      if (`${quizScore}` >= "8") {
+        noobAlertMessage = "NO NOOBYNESS HERE";
         noobAlertMedia = noobAlertGIFS[1];
-      }
-      else if (`${quizScore}` >= '5') {
-        noobAlertMessage = 'AMATEUR NOOB';
+      } else if (`${quizScore}` >= "6") {
+        noobAlertMessage = "AMATEUR NOOB";
         noobAlertMedia = noobAlertGIFS[1];
-      }
-      else if (`${quizScore}` >= '3') {
-        noobAlertMessage = 'MINOR NOOB ALERT';
+      } else if (`${quizScore}` >= "4") {
+        noobAlertMessage = "MINOR NOOB ALERT";
         noobAlertMedia = noobAlertGIFS[1];
-      }
-      else if (`${quizScore}` >= '1') {
-        noobAlertMessage = 'MAJOR NOOB ALERT';
+      } else if (`${quizScore}` >= "2") {
+        noobAlertMessage = "MAJOR NOOB ALERT";
         noobAlertMedia = noobAlertGIFS[1];
-      }
-      else {
+      } else {
         noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
         noobAlertMedia = noobAlertGIFS[0];
       }
       DOMSelectors.results.innerHTML = "";
- 
-      DOMSelectors.results.insertAdjacentHTML("beforeend",
+
+      DOMSelectors.results.insertAdjacentHTML(
+        "beforeend",
         `<div class="noobAlert" >
       <div>Your Score is ${quizScore}/${quizQuestions.length}</div>
       <div> ${noobAlertMessage} </div>
       <img  class="noobAlertMedia" src="${noobAlertMedia}" >
       </div> 
-      `);
-    };
+      `
+      );
+    }
     noobLevel();
-  }
-
+  };
 
   DOMSelectors.submitButton.addEventListener("click", submitQuiz);
 
   function closeResults() {
     DOMSelectors.resultsContainer.style.display = "none";
-
   }
 
   DOMSelectors.closeResults.addEventListener("click", closeResults);
-
-
 };
 
-
-
-init(); 
+init();
