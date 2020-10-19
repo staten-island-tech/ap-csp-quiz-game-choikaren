@@ -52,22 +52,24 @@ const init = function () {
       }
     });
 
+    var quizScoreValue = quizScore.value;
+
     function noobLevel() {
       let noobAlertMessage;
       let noobAlertMedia;
 
       DOMSelectors.resultsContainer.style.display = "block";
 
-      if (`${quizScore}` >= "8") {
+      if (`${quizScoreValue}` >= "9") {
         noobAlertMessage = "NO NOOBYNESS HERE";
         noobAlertMedia = noobAlertGIFS[4];
-      } else if (`${quizScore}` >= "6") {
+      } else if (`${quizScoreValue}` >= "7") {
         noobAlertMessage = "AMATEUR NOOB";
         noobAlertMedia = noobAlertGIFS[3];
-      } else if (`${quizScore}` >= "4") {
-        noobAlertMessage = "MINOR NOOB ALERT";
+      } else if (`${quizScoreValue}` >= "4") {
+        noobAlertMessage = "YOU'VE GOT SOME NOOB IN YOU";
         noobAlertMedia = noobAlertGIFS[2];
-      } else if (`${quizScore}` >= "2") {
+      } else if (`${quizScoreValue}` >= "2") {
         noobAlertMessage = "MAJOR NOOB ALERT";
         noobAlertMedia = noobAlertGIFS[1];
       } else {

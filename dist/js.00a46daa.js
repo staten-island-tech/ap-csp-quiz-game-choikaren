@@ -271,21 +271,23 @@ var init = function init() {
       }
     });
 
+    var quizScoreValue = quizScore.value;
+
     function noobLevel() {
       var noobAlertMessage;
       var noobAlertMedia;
       _DOM.DOMSelectors.resultsContainer.style.display = "block";
 
-      if ("".concat(quizScore) >= "8") {
+      if ("".concat(quizScoreValue) >= "9") {
         noobAlertMessage = "NO NOOBYNESS HERE";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[4];
-      } else if ("".concat(quizScore) >= "6") {
+      } else if ("".concat(quizScoreValue) >= "7") {
         noobAlertMessage = "AMATEUR NOOB";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[3];
-      } else if ("".concat(quizScore) >= "4") {
-        noobAlertMessage = "MINOR NOOB ALERT";
+      } else if ("".concat(quizScoreValue) >= "4") {
+        noobAlertMessage = "YOU'VE GOT SOME NOOB IN YOU";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[2];
-      } else if ("".concat(quizScore) >= "2") {
+      } else if ("".concat(quizScoreValue) >= "2") {
         noobAlertMessage = "MAJOR NOOB ALERT";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
       } else {
@@ -339,7 +341,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52152" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50707" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
