@@ -3,31 +3,38 @@ import { DOMSelectors } from "./DOM";
 console.log("connected");
 
 const init = function () {
+  
+  
+
   quizQuestions.forEach((item) =>
     DOMSelectors.quizContainer.insertAdjacentHTML(
       "beforeend",
-      `<div class="question" id="${item.number}" >
+      `<div class="question" id="${item.number}">
               <div class="questionAsked" >${item.question}</div>
               <br>
               <div class="choicesContainer" >
-                <div class="row" >              
-                    <input type="radio" name="${item.number}" value="${item.answers.a}">
-                    <label for="${item.answers.a}">${item.answers.a}</label>
+                <div class="row" >
+                    <label for="${item.number}.1">              
+                    <input id="${item.number}.1" type="radio" name="${item.number}" value="${item.answers.a}" onclick="whalenHenriquesTrigger()" >
+                    ${item.answers.a}</label>
                 </div>
 
-                <div class="row" >              
-                <input type="radio" name="${item.number}" value="${item.answers.b}">
-                <label for="${item.answers}">${item.answers.b}</label>
+                <div class="row" >
+                <label for="${item.number}.2">              
+                <input  id="${item.number}.2" type="radio" name="${item.number}" value="${item.answers.b}" onclick="whalenHenriquesTrigger()">
+                ${item.answers.b}</label>
                 </div>
 
-                <div class="row" >              
-                <input type="radio" name="${item.number}"  value="${item.answers.c}">
-                <label for="${item.answers}">${item.answers.c}</label>
+                <div class="row" >
+                <label for="${item.number}.3">              
+                <input  id="${item.number}.3"  type="radio" name="${item.number}"  value="${item.answers.c}" onclick="whalenHenriquesTrigger()">
+                ${item.answers.c}</label>
                 </div>
 
-                <div class="row" >              
-                <input type="radio" name="${item.number}"  value="${item.answers.d}">
-                <label for="${item.answers}">${item.answers.d}</label>
+                <div class="row" >
+                <label for="${item.number}.4">              
+                <input  id="${item.number}.4" type="radio" name="${item.number}"  value="${item.answers.d}" onclick="whalenHenriquesTrigger()">
+                ${item.answers.d}</label>
                 </div>
               
               </div>
@@ -64,16 +71,16 @@ const init = function () {
         noobAlertMessage = "NO NOOBYNESS HERE";
         noobAlertMedia = noobAlertGIFS[4];
       } else if (`${quizScoreValue}` >= "7") {
-        noobAlertMessage = "AMATEUR NOOB";
+        noobAlertMessage = "NOOBULAR ACTIVITY DETECTED";
         noobAlertMedia = noobAlertGIFS[3];
       } else if (`${quizScoreValue}` >= "4") {
-        noobAlertMessage = "YOU'VE GOT SOME NOOB IN YOU";
+        noobAlertMessage = "YOU'VE GOT SOME BIG NOOB IN YOU";
         noobAlertMedia = noobAlertGIFS[2];
       } else if (`${quizScoreValue}` >= "2") {
         noobAlertMessage = "MAJOR NOOB ALERT";
         noobAlertMedia = noobAlertGIFS[1];
       } else {
-        noobAlertMessage = `MASSIVE NOOB ALERT!! BEWARE!!`;
+        noobAlertMessage = `CHONK OF A NOOB!! BEWARE!!`;
         noobAlertMedia = noobAlertGIFS[0];
       }
       DOMSelectors.results.innerHTML = "";

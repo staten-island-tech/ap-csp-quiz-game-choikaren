@@ -8,10 +8,10 @@
 </head>
 
 <body class="body">
-    
+
     <div class="results">
         <div id="results">
-            <span class="close" >&#215;</span>
+            <span class="close">&#215;</span>
             <div class="message"></div>
         </div>
     </div>
@@ -21,18 +21,51 @@
         <img src="media/noob-police.gif" alt="">
     </div>
     <div id="quiz"></div>
-    <buttton id="submit" class="btn" >
+    <buttton id="submit" class="btn">
         <div>
             CHECK NOW!!
         </div>
     </buttton>
-    <buttton class="btn reset" >
+    <buttton class="btn reset">
         <div>
             <a href="javascript:location.reload(true)">Reset</a>
         </div>
+        <button onclick="myFunction()">Click me</button>
     </buttton>
 
-    <script src="js/index.js"></script>
+    <script src="js/index.js">
+
+    </script>
+    <script>
+        function whalenHenriquesTrigger() {
+            const answerSelected = document.querySelector(
+                `input[name="1"]:checked`
+            ).value;
+            if (answerSelected === "YES, WHALEN HERE") {
+                document.querySelector(".results").style.display = "block";
+                document.querySelector(".message").innerHTML = "";
+                document.querySelector(".message").insertAdjacentHTML(
+                    "beforeend",
+                    `<div class="noobAlert" >
+                        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>
+                        <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
+                        </div>`
+                );
+            } else if (answerSelected === "MR. HENRIQUES") {
+                document.querySelector(".results").style.display = "block";
+                document.querySelector(".message").innerHTML = "";
+                document.querySelector(".message").insertAdjacentHTML(
+                    "beforeend",
+                    `<div class="noobAlert" >
+                        <div> CHONK OF A WHOLE BUTTCHEEK AND A QUARTER NOOB</div>
+                        <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
+                        </div>`
+                );
+            };
+            console.log(`${answerSelected}`);
+        }
+
+    </script>
 </body>
 
 </html>

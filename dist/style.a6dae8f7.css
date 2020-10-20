@@ -33,7 +33,7 @@ a {
   font-size: 3rem;
 }
 .title img {
-  width: 40rem;
+  max-width: 40rem;
 }
 
 #quiz {

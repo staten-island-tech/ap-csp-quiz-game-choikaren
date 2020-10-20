@@ -8,7 +8,7 @@
 <script src="/style.a6dae8f7.js"></script></head>
 
 <body class="body">
-    
+
     <div class="results">
         <div id="results">
             <span class="close">&#215;</span>
@@ -30,9 +30,28 @@
         <div>
             <a href="javascript:location.reload(true)">Reset</a>
         </div>
+        <button onclick="myFunction()">Click me</button>
     </buttton>
 
-    <script src="/js.00a46daa.js"></script>
+    <script src="/js.00a46daa.js">
+
+    </script>
+    <script>function whalenHenriquesTrigger() {
+  var answerSelected = document.querySelector("input[name=\"1\"]:checked").value;
+
+  if (answerSelected === "YES, WHALEN HERE") {
+    document.querySelector(".results").style.display = "block";
+    document.querySelector(".message").innerHTML = "";
+    document.querySelector(".message").insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n                        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>\n                        <img  class=\"noobAlertMedia\" src=\"https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif\" >\n                        </div>");
+  } else if (answerSelected === "MR. HENRIQUES") {
+    document.querySelector(".results").style.display = "block";
+    document.querySelector(".message").innerHTML = "";
+    document.querySelector(".message").insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n                        <div> CHONK OF A WHOLE BUTTCHEEK AND A QUARTER NOOB</div>\n                        <img  class=\"noobAlertMedia\" src=\"https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif\" >\n                        </div>");
+  }
+
+  ;
+  console.log("".concat(answerSelected));
+}</script>
 </body>
 
 </html>

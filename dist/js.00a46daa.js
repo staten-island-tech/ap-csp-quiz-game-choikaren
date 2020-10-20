@@ -126,6 +126,16 @@ Object.defineProperty(exports, "__esModule", {
 exports.noobAlertGIFS = exports.quizQuestions = void 0;
 var quizQuestions = [{
   number: 1,
+  question: "wHO aRe YoU?",
+  answers: {
+    a: "YES, WHALEN HERE",
+    b: "MR. HENRIQUES",
+    c: "SPONGEBOB SQUAREPANTS",
+    d: "NON NOOB"
+  },
+  correctAnswer: "Yes"
+}, {
+  number: 2,
   question: "What is the best shoe?",
   answers: {
     a: "Vans",
@@ -135,7 +145,7 @@ var quizQuestions = [{
   },
   correctAnswer: "Crocs"
 }, {
-  number: 2,
+  number: 3,
   question: "How do you fly?",
   answers: {
     a: "Extremely built up flatulence",
@@ -145,7 +155,7 @@ var quizQuestions = [{
   },
   correctAnswer: "Extremely built up flatulence"
 }, {
-  number: 3,
+  number: 4,
   question: "Do you like free stuff?",
   answers: {
     a: "No",
@@ -155,7 +165,7 @@ var quizQuestions = [{
   },
   correctAnswer: "YES"
 }, {
-  number: 4,
+  number: 5,
   question: "What is the best way to cut your bagels?",
   answers: {
     a: "Halves",
@@ -165,7 +175,7 @@ var quizQuestions = [{
   },
   correctAnswer: "Quarters"
 }, {
-  number: 5,
+  number: 6,
   question: "When eating a bowl of cereal, what do you pour first?",
   answers: {
     a: "Milk",
@@ -175,7 +185,7 @@ var quizQuestions = [{
   },
   correctAnswer: "Milk"
 }, {
-  number: 6,
+  number: 7,
   question: "What is the best breakfast?",
   answers: {
     a: "Green Eggs & Ham",
@@ -185,7 +195,7 @@ var quizQuestions = [{
   },
   correctAnswer: "Oatmeal"
 }, {
-  number: 7,
+  number: 8,
   question: "Do you know how to use chopsticks?",
   answers: {
     a: "Yes, um duhh",
@@ -195,7 +205,7 @@ var quizQuestions = [{
   },
   correctAnswer: "No"
 }, {
-  number: 8,
+  number: 9,
   question: "Do you eat or drink soup?",
   answers: {
     a: "Slurrrppp",
@@ -205,7 +215,7 @@ var quizQuestions = [{
   },
   correctAnswer: "Slurrrppp"
 }, {
-  number: 9,
+  number: 10,
   question: "Hey, you've got something on your shirt - ",
   answers: {
     a: "WOOP!",
@@ -215,7 +225,7 @@ var quizQuestions = [{
   },
   correctAnswer: "WOOP!"
 }, {
-  number: 10,
+  number: 11,
   question: "Can you ride a bike?",
   answers: {
     a: "I am Karen Choi",
@@ -254,7 +264,7 @@ console.log("connected");
 
 var init = function init() {
   _questionsAnswers.quizQuestions.forEach(function (item) {
-    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\" >\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >              \n                    <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\">\n                    <label for=\"").concat(item.answers.a, "\">").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.c, "</label>\n                </div>\n\n                <div class=\"row\" >              \n                <input type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.d, "\">\n                <label for=\"").concat(item.answers, "\">").concat(item.answers.d, "</label>\n                </div>\n              \n              </div>\n            </div>"));
+    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\">\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >\n                    <label for=\"").concat(item.number, ".1\">              \n                    <input id=\"").concat(item.number, ".1\" type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\" onclick=\"whalenHenriquesTrigger()\" >\n                    ").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".2\">              \n                <input  id=\"").concat(item.number, ".2\" type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\" onclick=\"whalenHenriquesTrigger()\">\n                ").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".3\">              \n                <input  id=\"").concat(item.number, ".3\"  type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\" onclick=\"whalenHenriquesTrigger()\">\n                ").concat(item.answers.c, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".4\">              \n                <input  id=\"").concat(item.number, ".4\" type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.d, "\" onclick=\"whalenHenriquesTrigger()\">\n                ").concat(item.answers.d, "</label>\n                </div>\n              \n              </div>\n            </div>"));
   });
 
   var submitQuiz = function submitQuiz() {
@@ -282,16 +292,16 @@ var init = function init() {
         noobAlertMessage = "NO NOOBYNESS HERE";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[4];
       } else if ("".concat(quizScoreValue) >= "7") {
-        noobAlertMessage = "AMATEUR NOOB";
+        noobAlertMessage = "NOOBULAR ACTIVITY DETECTED";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[3];
       } else if ("".concat(quizScoreValue) >= "4") {
-        noobAlertMessage = "YOU'VE GOT SOME NOOB IN YOU";
+        noobAlertMessage = "YOU'VE GOT SOME BIG NOOB IN YOU";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[2];
       } else if ("".concat(quizScoreValue) >= "2") {
         noobAlertMessage = "MAJOR NOOB ALERT";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[1];
       } else {
-        noobAlertMessage = "MASSIVE NOOB ALERT!! BEWARE!!";
+        noobAlertMessage = "CHONK OF A NOOB!! BEWARE!!";
         noobAlertMedia = _questionsAnswers.noobAlertGIFS[0];
       }
 
@@ -341,7 +351,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50707" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57739" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

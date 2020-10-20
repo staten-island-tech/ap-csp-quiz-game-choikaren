@@ -1,6 +1,17 @@
 const quizQuestions = [
   {
     number: 1,
+    question: "wHO aRe YoU?",
+    answers: {
+      a: "YES, WHALEN HERE",
+      b: "MR. HENRIQUES",
+      c: "SPONGEBOB SQUAREPANTS",
+      d: "NON NOOB",
+    },
+    correctAnswer: "Yes",
+  },
+  {
+    number: 2,
     question: "What is the best shoe?",
     answers: {
       a: "Vans",
@@ -11,7 +22,7 @@ const quizQuestions = [
     correctAnswer: "Crocs",
   },
   {
-    number: 2,
+    number: 3,
     question: "How do you fly?",
     answers: {
       a: "Extremely built up flatulence",
@@ -22,7 +33,7 @@ const quizQuestions = [
     correctAnswer: "Extremely built up flatulence",
   },
   {
-    number: 3,
+    number: 4,
     question: "Do you like free stuff?",
     answers: {
       a: "No",
@@ -33,7 +44,7 @@ const quizQuestions = [
     correctAnswer: "YES",
   },
   {
-    number: 4,
+    number: 5,
     question: "What is the best way to cut your bagels?",
     answers: {
       a: "Halves",
@@ -44,7 +55,7 @@ const quizQuestions = [
     correctAnswer: "Quarters",
   },
   {
-    number: 5,
+    number: 6,
     question: "When eating a bowl of cereal, what do you pour first?",
     answers: {
       a: "Milk",
@@ -55,7 +66,7 @@ const quizQuestions = [
     correctAnswer: "Milk",
   },
   {
-    number: 6,
+    number: 7,
     question: "What is the best breakfast?",
     answers: {
       a: "Green Eggs & Ham",
@@ -66,7 +77,7 @@ const quizQuestions = [
     correctAnswer: "Oatmeal",
   },
   {
-    number: 7,
+    number: 8,
     question: "Do you know how to use chopsticks?",
     answers: {
       a: "Yes, um duhh",
@@ -77,7 +88,7 @@ const quizQuestions = [
     correctAnswer: "No",
   },
   {
-    number: 8,
+    number: 9,
     question: "Do you eat or drink soup?",
     answers: {
       a: "Slurrrppp",
@@ -88,7 +99,7 @@ const quizQuestions = [
     correctAnswer: "Slurrrppp",
   },
   {
-    number: 9,
+    number: 10,
     question: "Hey, you've got something on your shirt - ",
     answers: {
       a: "WOOP!",
@@ -99,7 +110,7 @@ const quizQuestions = [
     correctAnswer: "WOOP!",
   },
   {
-    number: 10,
+    number: 11,
     question: "Can you ride a bike?",
     answers: {
       a: "I am Karen Choi",
@@ -108,7 +119,7 @@ const quizQuestions = [
       d: "Duh",
     },
     correctAnswer: "Yes",
-  },
+  }
 ];
 
 const noobAlertGIFS = [
