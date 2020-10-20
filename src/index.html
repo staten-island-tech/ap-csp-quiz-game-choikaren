@@ -30,28 +30,35 @@
         <div>
             <a href="javascript:location.reload(true)">Reset</a>
         </div>
-        <button onclick="myFunction()">Click me</button>
     </buttton>
 
     <script src="js/index.js">
 
     </script>
     <script>
+        
+        var runOnceWhalen = true;
+        var runOnceHenriques = true;
         function whalenHenriquesTrigger() {
             const answerSelected = document.querySelector(
                 `input[name="1"]:checked`
             ).value;
-            if (answerSelected === "YES, WHALEN HERE") {
-                document.querySelector(".results").style.display = "block";
-                document.querySelector(".message").innerHTML = "";
-                document.querySelector(".message").insertAdjacentHTML(
-                    "beforeend",
-                    `<div class="noobAlert" >
+            if (answerSelected === "YES, WHALEN HERE" && runOnceWhalen) {
+                runOnceWhalen = false;
+                function whalenPopUp() {
+                    document.querySelector(".results").style.display = "block";
+                    document.querySelector(".message").innerHTML = "";
+                    document.querySelector(".message").insertAdjacentHTML(
+                        "beforeend",
+                        `<div class="noobAlert" >
                         <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>
                         <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
                         </div>`
-                );
-            } else if (answerSelected === "MR. HENRIQUES") {
+                    );
+                };
+                whalenPopUp();
+            } else if (answerSelected === "MR. HENRIQUES" && runOnceHenriques) {
+                runOnceHenriques = false;
                 document.querySelector(".results").style.display = "block";
                 document.querySelector(".message").innerHTML = "";
                 document.querySelector(".message").insertAdjacentHTML(
@@ -61,7 +68,7 @@
                         <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
                         </div>`
                 );
-            };
+            } else {};
             console.log(`${answerSelected}`);
         }
 
