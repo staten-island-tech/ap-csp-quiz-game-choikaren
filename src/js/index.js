@@ -3,8 +3,40 @@ import { DOMSelectors } from "./DOM";
 console.log("connected");
 
 const init = function () {
-  
-  
+
+  var runOnceWhalen = true;
+  var runOnceHenriques = true;
+  function whalenHenriquesTrigger() {
+    const answerSelected = document.querySelector(
+      `input[name="1"]:checked`
+    ).value;
+    if (answerSelected === "YES, WHALEN HERE" && runOnceWhalen) {
+      runOnceWhalen = false;
+      function whalenPopUp() {
+        DOMSelectors.resultsContainer.style.display = "block";
+        DOMSelectors.results.innerHTML = "";
+        document.results.insertAdjacentHTML(
+          "beforeend",
+          `<div class="noobAlert" >
+                        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>
+                        <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
+                        </div>`
+        );
+      };
+      whalenPopUp();
+    } else if (answerSelected === "MR. HENRIQUES" && runOnceHenriques) {
+      runOnceHenriques = false;
+      DOMSelectors.resultsContainer.style.display = "block";
+      DOMSelectors.results.innerHTML = "";
+      DOMSelectors.results.insertAdjacentHTML(
+        "beforeend",
+        `<div class="noobAlert" >
+                        <div> CHONK OF A WHOLE BUTTCHEEK AND A QUARTER NOOB</div>
+                        <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
+                        </div>`
+      );
+    } else { };
+  }
 
   quizQuestions.forEach((item) =>
     DOMSelectors.quizContainer.insertAdjacentHTML(
@@ -15,25 +47,25 @@ const init = function () {
               <div class="choicesContainer" >
                 <div class="row" >
                     <label for="${item.number}.1">              
-                    <input id="${item.number}.1" type="radio" name="${item.number}" value="${item.answers.a}" onclick="whalenHenriquesTrigger()" >
+                    <input id="${item.number}.1" type="radio" name="${item.number}" value="${item.answers.a}" >
                     ${item.answers.a}</label>
                 </div>
 
                 <div class="row" >
                 <label for="${item.number}.2">              
-                <input  id="${item.number}.2" type="radio" name="${item.number}" value="${item.answers.b}" onclick="whalenHenriquesTrigger()">
+                <input  id="${item.number}.2" type="radio" name="${item.number}" value="${item.answers.b}">
                 ${item.answers.b}</label>
                 </div>
 
                 <div class="row" >
                 <label for="${item.number}.3">              
-                <input  id="${item.number}.3"  type="radio" name="${item.number}"  value="${item.answers.c}" onclick="whalenHenriquesTrigger()">
+                <input  id="${item.number}.3"  type="radio" name="${item.number}"  value="${item.answers.c}">
                 ${item.answers.c}</label>
                 </div>
 
                 <div class="row" >
                 <label for="${item.number}.4">              
-                <input  id="${item.number}.4" type="radio" name="${item.number}"  value="${item.answers.d}" onclick="whalenHenriquesTrigger()">
+                <input  id="${item.number}.4" type="radio" name="${item.number}"  value="${item.answers.d}">
                 ${item.answers.d}</label>
                 </div>
               
@@ -106,6 +138,8 @@ const init = function () {
   }
 
   DOMSelectors.closeResults.addEventListener("click", closeResults);
+
+  document.querySelectorAll("input").forEach((el) => el.addEventListener("click", whalenHenriquesTrigger));
 };
 
 init();

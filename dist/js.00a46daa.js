@@ -263,8 +263,36 @@ var _DOM = require("./DOM");
 console.log("connected");
 
 var init = function init() {
+  var runOnceWhalen = true;
+  var runOnceHenriques = true;
+
+  function whalenHenriquesTrigger() {
+    var answerSelected = document.querySelector("input[name=\"1\"]:checked").value;
+
+    if (answerSelected === "YES, WHALEN HERE" && runOnceWhalen) {
+      runOnceWhalen = false;
+
+      function whalenPopUp() {
+        _DOM.DOMSelectors.resultsContainer.style.display = "block";
+        _DOM.DOMSelectors.results.innerHTML = "";
+        document.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n                        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>\n                        <img  class=\"noobAlertMedia\" src=\"https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif\" >\n                        </div>");
+      }
+
+      ;
+      whalenPopUp();
+    } else if (answerSelected === "MR. HENRIQUES" && runOnceHenriques) {
+      runOnceHenriques = false;
+      _DOM.DOMSelectors.resultsContainer.style.display = "block";
+      _DOM.DOMSelectors.results.innerHTML = "";
+
+      _DOM.DOMSelectors.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n                        <div> CHONK OF A WHOLE BUTTCHEEK AND A QUARTER NOOB</div>\n                        <img  class=\"noobAlertMedia\" src=\"https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif\" >\n                        </div>");
+    } else {}
+
+    ;
+  }
+
   _questionsAnswers.quizQuestions.forEach(function (item) {
-    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\">\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >\n                    <label for=\"").concat(item.number, ".1\">              \n                    <input id=\"").concat(item.number, ".1\" type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\" onclick=\"whalenHenriquesTrigger()\" >\n                    ").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".2\">              \n                <input  id=\"").concat(item.number, ".2\" type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\" onclick=\"whalenHenriquesTrigger()\">\n                ").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".3\">              \n                <input  id=\"").concat(item.number, ".3\"  type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\" onclick=\"whalenHenriquesTrigger()\">\n                ").concat(item.answers.c, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".4\">              \n                <input  id=\"").concat(item.number, ".4\" type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.d, "\" onclick=\"whalenHenriquesTrigger()\">\n                ").concat(item.answers.d, "</label>\n                </div>\n              \n              </div>\n            </div>"));
+    return _DOM.DOMSelectors.quizContainer.insertAdjacentHTML("beforeend", "<div class=\"question\" id=\"".concat(item.number, "\">\n              <div class=\"questionAsked\" >").concat(item.question, "</div>\n              <br>\n              <div class=\"choicesContainer\" >\n                <div class=\"row\" >\n                    <label for=\"").concat(item.number, ".1\">              \n                    <input id=\"").concat(item.number, ".1\" type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.a, "\" >\n                    ").concat(item.answers.a, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".2\">              \n                <input  id=\"").concat(item.number, ".2\" type=\"radio\" name=\"").concat(item.number, "\" value=\"").concat(item.answers.b, "\">\n                ").concat(item.answers.b, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".3\">              \n                <input  id=\"").concat(item.number, ".3\"  type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.c, "\">\n                ").concat(item.answers.c, "</label>\n                </div>\n\n                <div class=\"row\" >\n                <label for=\"").concat(item.number, ".4\">              \n                <input  id=\"").concat(item.number, ".4\" type=\"radio\" name=\"").concat(item.number, "\"  value=\"").concat(item.answers.d, "\">\n                ").concat(item.answers.d, "</label>\n                </div>\n              \n              </div>\n            </div>"));
   });
 
   var submitQuiz = function submitQuiz() {
@@ -320,6 +348,10 @@ var init = function init() {
   }
 
   _DOM.DOMSelectors.closeResults.addEventListener("click", closeResults);
+
+  document.querySelectorAll("input").forEach(function (el) {
+    return el.addEventListener("click", whalenHenriquesTrigger);
+  });
 };
 
 init();
@@ -351,7 +383,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "65351" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54541" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
