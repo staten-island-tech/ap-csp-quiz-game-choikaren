@@ -1,0 +1,124 @@
+html,
+body {
+  box-sizing: border-box;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+::selection {
+  background-color: rgb(255, 214, 204);
+}
+
+.body {
+  padding: 2rem !important;
+  background-color: rgb(162, 162, 223);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  h1 {
+    font-size: 5rem;
+  }
+  h2 {
+    font-size: 3rem;
+  }
+  img {
+    max-width: 40rem;
+  }
+}
+
+#quiz {
+  max-width: 100rem;
+  margin: auto;
+  display: grid;
+  font-size: 1.75rem;
+  padding: 2rem;
+  // grid-gap: 1rem;
+}
+
+@media (min-width: 700px) {
+  #quiz {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.question {
+  padding: 1.5rem;
+}
+
+.questionAsked {
+  font-weight: bold;
+}
+
+input,
+label {
+  // height: 1rem;
+  margin: 0.2rem;
+  vertical-align: middle;
+}
+
+.btn {
+  font-size: 3rem;
+  display: block;
+  padding-bottom: 1rem;
+  div {
+    margin: auto;
+    background-color: rgb(255, 214, 204);
+    width: 30rem;
+    text-align: center;
+    padding: 1rem;
+  }
+  div:hover {
+    cursor: pointer;
+  }
+}
+
+.btn.reset {
+  div {
+    background-color: rgb(137, 137, 216);
+  }
+}
+
+.results {
+  background-color: rgba($color: #000000, $alpha: 0.7);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+#results {
+  font-size: 4rem;
+  margin: 4rem;
+  margin-top: 8rem;
+  text-align: center;
+  background-color: antiquewhite;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+@media (min-width: 700px) {
+  #results {
+    margin: 5rem;
+  }
+}
+
+.close:hover {
+  cursor: pointer;
+}
+
+.noobAlertMedia {
+  width: 100%;
+  max-width: 40rem;
+}
