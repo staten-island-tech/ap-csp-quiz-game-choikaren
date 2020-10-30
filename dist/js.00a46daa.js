@@ -271,15 +271,10 @@ var init = function init() {
 
     if (answerSelected === "YES, WHALEN HERE" && runOnceWhalen) {
       runOnceWhalen = false;
+      _DOM.DOMSelectors.resultsContainer.style.display = "block";
+      _DOM.DOMSelectors.results.innerHTML = "";
 
-      function whalenPopUp() {
-        _DOM.DOMSelectors.resultsContainer.style.display = "block";
-        _DOM.DOMSelectors.results.innerHTML = "";
-        document.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n                        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>\n                        <img  class=\"noobAlertMedia\" src=\"https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif\" >\n                        </div>");
-      }
-
-      ;
-      whalenPopUp();
+      _DOM.DOMSelectors.results.insertAdjacentHTML("beforeend", "<div class=\"noobAlert\" >\n        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>\n        <img  class=\"noobAlertMedia\" src=\"https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif\" >\n        </div>");
     } else if (answerSelected === "MR. HENRIQUES" && runOnceHenriques) {
       runOnceHenriques = false;
       _DOM.DOMSelectors.resultsContainer.style.display = "block";
@@ -383,7 +378,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54541" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61256" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

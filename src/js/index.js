@@ -12,18 +12,15 @@ const init = function () {
     ).value;
     if (answerSelected === "YES, WHALEN HERE" && runOnceWhalen) {
       runOnceWhalen = false;
-      function whalenPopUp() {
-        DOMSelectors.resultsContainer.style.display = "block";
-        DOMSelectors.results.innerHTML = "";
-        document.results.insertAdjacentHTML(
-          "beforeend",
-          `<div class="noobAlert" >
-                        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>
-                        <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
-                        </div>`
-        );
-      };
-      whalenPopUp();
+      DOMSelectors.resultsContainer.style.display = "block";
+      DOMSelectors.results.innerHTML = "";
+      DOMSelectors.results.insertAdjacentHTML(
+        "beforeend",
+        `<div class="noobAlert" >
+        <div> CHONK OF A WHOLE BUTTCHEEK AND A HALF NOOB</div>
+        <img  class="noobAlertMedia" src="https://i.postimg.cc/d17DFwPg/massive-Noob-Alert.gif" >
+        </div>`
+      );
     } else if (answerSelected === "MR. HENRIQUES" && runOnceHenriques) {
       runOnceHenriques = false;
       DOMSelectors.resultsContainer.style.display = "block";
